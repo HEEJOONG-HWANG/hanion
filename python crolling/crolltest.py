@@ -32,13 +32,34 @@ beautifulsoup 가 bs4 임 (라이브러리)
 
 """
 ########### bs 간단 테스트 #################################################################################################
-
+'''
 from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
 from bs4 import BeautifulSoup
 html = urlopen("https://search.naver.com/search.naver?where=nexearch&query=%EC%B9%B4%EB%A6%AC%EC%9A%B0%EC%8A%A4&sm=top_lve&ie=utf8")
 #오픈하려는 주소 (나중에 api 주소 입력과 변수설정 추가해서 사용할듯)
 bsObj = BeautifulSoup(html.read(),"html.parser")
 print(bsObj.h1) #h1만 걸러서 프린트해주는듯 위에 bs4에서 html로 이쁘게 정리해서
-
+'''
 ########bs 간단 테스트 완료 #############################################################
 
+########### api 간단 테스트 #################################################################################################
+"""
+from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
+from bs4 import BeautifulSoup
+html = urlopen("http://data.suwon.go.kr/suwon/openapi/service/getDataList.api?serviceId=weatherAreainfo&apiType=json&serviceKey=8e7c858a1cdd4423838f607d3111266e180528224912")
+#api 수원시청 내 인증키 넣은거 
+bsObj = BeautifulSoup(html.read(),"html.parser")
+print(bsObj) #test ㅜㅜ
+"""
+########  api 간단 테스트 완료 #############################################################
+
+########### api 간단 테스트 lxml #################################################################################################
+
+from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
+from bs4 import BeautifulSoup
+html = urlopen("http://data.suwon.go.kr/suwon/openapi/service/getDataList.api?serviceId=weatherAreainfo&apiType=json&serviceKey=8e7c858a1cdd4423838f607d3111266e180528224912")
+#api 수원시청 내 인증키 넣은거 
+bsObj = BeautifulSoup(html.read(),"lxml")
+print(bsObj) #test ㅜㅜ
+
+########  api 간단 테스트 완료 #############################################################
