@@ -54,12 +54,28 @@ print(bsObj) #test ㅜㅜ
 ########  api 간단 테스트 완료 #############################################################
 
 ########### api 간단 테스트 lxml #################################################################################################
-
+'''
 from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
 from bs4 import BeautifulSoup
-html = urlopen("http://data.suwon.go.kr/suwon/openapi/service/getDataList.api?serviceId=weatherAreainfo&apiType=json&serviceKey=8e7c858a1cdd4423838f607d3111266e180528224912")
+html = urlopen("http://data.suwon.go.kr/suwon/openapi/service/getDataList.api?serviceId=weatherAreainfo&apiType=xml&serviceKey=8e7c858a1cdd4423838f607d3111266e180528224912")
 #api 수원시청 내 인증키 넣은거 
+#api 주소에서 json이나 xml로 받을수있다.
 bsObj = BeautifulSoup(html.read(),"lxml")
 print(bsObj) #test ㅜㅜ
 
+'''
 ########  api 간단 테스트 완료 #############################################################
+
+########### api 세계날씨 https://openweathermap.org/api #################################################################################################
+
+# 내 api key    -     11335f1806a57d3a529433bf55ed39e8
+
+from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
+from bs4 import BeautifulSoup
+html = urlopen("http://api.openweathermap.org/data/2.5/forecast?id=1835847&APPID=11335f1806a57d3a529433bf55ed39e8&mode=xml") # &mode=xml  seoul
+#api 세계날씨
+bsObj = BeautifulSoup(html.read(),"lxml")
+print(bsObj) #test 
+
+
+########  세계날씨#############################################################
