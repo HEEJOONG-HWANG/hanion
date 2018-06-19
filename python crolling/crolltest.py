@@ -92,10 +92,11 @@ $ pip install --upgrade influxdb
 $ pip uninstall influxdb
 
 """
-############# tutorial - basic ##########################################################
-
+############# tutorial - basic ######### 주석안에 주석쓰면 주석풀리네 ㅡㅅㅡ #################################################
+"""
 # -*- coding: utf-8 -*-
-"""Tutorial on using the InfluxDB client."""
+
+""Tutorial on using the InfluxDB client."
 
 import argparse
 
@@ -103,7 +104,7 @@ from influxdb import InfluxDBClient
 
 
 def main(host='localhost', port=8086):
-    """Instantiate a connection to the InfluxDB."""
+    ""Instantiate a connection to the InfluxDB."
     user = 'root'
     password = 'root'
     dbname = 'example'
@@ -154,7 +155,7 @@ def main(host='localhost', port=8086):
 
 
 def parse_args():
-    """Parse the args."""
+    ""Parse the args"
     parser = argparse.ArgumentParser(
         description='example code to play with InfluxDB')
     parser.add_argument('--host', type=str, required=False,
@@ -169,5 +170,25 @@ if __name__ == '__main__':
     args = parse_args()
     main(host=args.host, port=args.port)
 
-
+"""
 ######### tutorial - basic #############################
+
+########상윤 influx -test ######################
+
+import argparse
+
+from influxdb import InfluxDBClient
+
+client = InfluxDBClient(host='127.0.0.1', port=8086, username='root', password='root', database='ssy2')
+client2 = InfluxDBClient(host='127.0.0.1', port=8086, username='root', password='root', database='ssy')
+#print("Create database: " + 'ssy2')
+#client.create_database('ssy2')
+#list2=client2.get_list_database()
+
+#query2 = 'insert weather, location=suwon temp=19,pop=444' insert를 지원안함;;;
+#print("Querying data: " + query2)
+###client2.query(query2)#############
+query = 'select * from weather'
+print("Querying data: " + query)
+result=client2.query(query)
+print("Result: {0}".format(result))
