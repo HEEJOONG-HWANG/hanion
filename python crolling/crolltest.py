@@ -6,11 +6,12 @@
 ################ 오픈url테스트 #############################################################################################################
 """
 from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
-html=urlopen("https://search.naver.com/search.naver?where=nexearch&query=%EC%B9%B4%EB%A6%AC%EC%9A%B0%EC%8A%A4&sm=top_lve&ie=utf8")
+html=urlopen("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1+%EC%B1%97%EB%B4%87")
 #오픈하려는 주소 (나중에 api 주소 입력과 변수설정 추가해서 사용할듯)
 print(html.read()) #데이터 읽어드림 (파싱하기 전에 출력 확인)
 """
 ################## 오픈url 테스 끝#############################################################################################################
+
 """
 beautifulsoup 가 bs4 임 (라이브러리)
 크롤링 파싱할떄 쓰는거임 (파싱모듈)
@@ -25,21 +26,22 @@ beautifulsoup 가 bs4 임 (라이브러리)
     **윈도우에서 설치시 ->(참고 :https://blog.naver.com/panda220/221178698558)
 
     cmd 에서 내 파이선 깔려잇는 디렉토리로 이동 C:/Users/LG gram/AppData/Local/Programs/Python/Python36 (신상윤 컴터)
-    -> 환경변수 path 에 C:/Users/LG gram/AppData/Local/Programs/Python/Python36/Scripts 와 위에꺼 둘다 등록 먼저해야함  <- \ 로 입력하면 에러떠서 /로 해둠...
+    -> 환경변수 path 에 C:/Users/LG gram/AppData/Local/Programs/Python/Python36/Scripts 와 위에꺼 둘다 등록 먼저해야함
+          <- 백슬래시 로 입력하면 에러떠서 /로 해둠...
      pip 설치안되잇으면 설치할것. (사진첨부)
      virtualenv로 충돌 방지
 
 
 """
 ########### bs 간단 테스트 #################################################################################################
-'''
+"""
 from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
 from bs4 import BeautifulSoup
-html = urlopen("https://search.naver.com/search.naver?where=nexearch&query=%EC%B9%B4%EB%A6%AC%EC%9A%B0%EC%8A%A4&sm=top_lve&ie=utf8")
+html = urlopen("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
 #오픈하려는 주소 (나중에 api 주소 입력과 변수설정 추가해서 사용할듯)
 bsObj = BeautifulSoup(html.read(),"html.parser")
 print(bsObj.h1) #h1만 걸러서 프린트해주는듯 위에 bs4에서 html로 이쁘게 정리해서
-'''
+"""
 ########bs 간단 테스트 완료 #############################################################
 
 ########### api 간단 테스트 #################################################################################################
@@ -69,15 +71,14 @@ print(bsObj) #test ㅜㅜ
 ########### api 세계날씨 https://openweathermap.org/api #################################################################################################
 
 # 내 api key    -     11335f1806a57d3a529433bf55ed39e8
-"""
+'''
 from urllib.request import urlopen # urllib라이브러리에서 파이썬 모듈 requst를 읽어 open함수 하나만 임포트
 from bs4 import BeautifulSoup
 html = urlopen("http://api.openweathermap.org/data/2.5/forecast?id=1835847&APPID=11335f1806a57d3a529433bf55ed39e8&mode=xml") # &mode=xml  seoul
 #api 세계날씨
 bsObj = BeautifulSoup(html.read(),"lxml")
 print(bsObj) #test 
-"""
-
+'''
 ########  세계날씨#############################################################
 
 
@@ -172,7 +173,7 @@ if __name__ == '__main__':
 
 """
 ######### tutorial - basic #############################
-
+"""
 ########상윤 influx -test ######################
 
 import argparse
@@ -192,3 +193,8 @@ query = 'select * from weather'
 print("Querying data: " + query)
 result=client2.query(query)
 print("Result: {0}".format(result))
+"""
+
+################################################################################
+####################### AWS PYTHON DJANGO MySQL ################################
+################################################################################
