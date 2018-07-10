@@ -46,7 +46,7 @@ def Message():
             }
         }
         #크롤링해서 제공할 예정
-     elif u"연락처" in content:
+    elif u"연락처" in content:
         dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguTel.kgu?mzcode=K00M00020400"
