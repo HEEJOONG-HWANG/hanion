@@ -9,11 +9,16 @@ from flask import Flask, request, jsonify
 import requests
 from bs4 import BeautifulSoup
 
-r = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
-c = r.content
-html = BeautifulSoup(c,"html.parser")
-keywords=html.select(" .text_center")
- 
+req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+html = req.text
+soup = BeautifulSoup(html, 'html.parser')
+my_crol = soup.select(
+    'tr > td'
+)
+'''
+for ssy in my_crol:
+    print(ssy.text)
+'''
 app = Flask(__name__)
  
 @app.route('/keyboard')

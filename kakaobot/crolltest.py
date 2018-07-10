@@ -11,7 +11,7 @@ keywords=keywords.select_one(".table_t1")
 ssy2=keywords.select_one("td")
 print(ssy2)
 """
-
+"""
 import requests
 from bs4 import BeautifulSoup
 
@@ -31,7 +31,32 @@ tr=html.find("tr")
 td=tr.find_all("td")
 #print(td)
 """
-for tr in td:
-    div = tr.find("div",{"class":"text_center"})
-    print(div)
+#for tr in td:
+#    div = tr.find("div",{"class":"text_center"})
+#    print(div)
 """    
+#sub_contents > table:nth-child(8) > tbody > tr:nth-child(1) > td:nth-child(3)
+"""
+import requests
+from bs4 import BeautifulSoup
+
+req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+html = req.text
+soup = BeautifulSoup(html, 'html.parser')
+my_crol = soup.select(
+    'tr > td'
+)
+#print(my_crol)
+
+for ssy in my_crol:
+    print(ssy.text)
+    #print(ssy.get('td'))
+
+
+
+'''
+data = {}
+
+for ssy in my_crol:
+    data[ssy.text]=ssy.get('href')
+'''
