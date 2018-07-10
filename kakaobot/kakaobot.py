@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
  
 #---------------------------------
-# pangpang2.py
+# kakaobot.py  (상윤 ver)
 #---------------------------------
  
 import os
@@ -15,7 +15,7 @@ def Keyboard():
         "type" : "buttons",
         "buttons" : ["대화하기!", "도움말"]
     }
-    return jsonify(dataSend)
+    return jsonify(datSenad)
  
 @app.route('/message', methods=['POST'])
 def Message():
@@ -24,7 +24,7 @@ def Message():
     if content == u"대화하기!":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 도움말\n2. 안녕!\n3. 저기요~"
+                "text": "명령어 목록!\n1. 도움말\n2. 메뉴\n3. 연락처"
             }
         }
     elif content == u"도움말":
@@ -39,6 +39,20 @@ def Message():
                 "text": "안녕~~ 반가워 ㅎㅎ"
             }
         }
+    elif u"메뉴" in content:
+        dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon"
+            }
+        }
+        #크롤링해서 제공할 예정
+     elif u"연락처" in content:
+        dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguTel.kgu?mzcode=K00M00020400"
+            }
+        }    
+        #이하 동문
     elif u"저기" in content:
         dataSend = {
             "message": {
@@ -57,5 +71,4 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port = 5000)
 
 
-#출처: http://cupjoo.tistory.com/5 [오지는 컴퓨터 공부]
 #####################################################
