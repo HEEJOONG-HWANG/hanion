@@ -6,6 +6,13 @@
  
 import os
 from flask import Flask, request, jsonify
+import requests
+from bs4 import BeautifulSoup
+
+r = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+c = r.content
+html = BeautifulSoup(c,"html.parser")
+keywords=html.select(" .text_center")
  
 app = Flask(__name__)
  
@@ -39,6 +46,12 @@ def Message():
                 "text": "안녕~~ 반가워 ㅎㅎ"
             }
         }
+    elif content == u"test":
+        dataSend = {
+            "message": {
+                "text": keywords
+            }
+        }    
     elif u"메뉴" in content:
         dataSend = {
             "message": {
