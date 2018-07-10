@@ -15,7 +15,7 @@ def Keyboard():
         "type" : "buttons",
         "buttons" : ["대화하기!", "도움말"]
     }
-    return jsonify(datSenad)
+    return jsonify(dataSend)
  
 @app.route('/message', methods=['POST'])
 def Message():
