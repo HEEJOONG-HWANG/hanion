@@ -37,6 +37,7 @@ td=tr.find_all("td")
 """    
 #sub_contents > table:nth-child(8) > tbody > tr:nth-child(1) > td:nth-child(3)
 """
+'''
 import requests
 from bs4 import BeautifulSoup
 
@@ -51,12 +52,88 @@ my_crol = soup.select(
 for ssy in my_crol:
     print(ssy.text)
     #print(ssy.get('td'))
-
-
-
+'''
 '''
 data = {}
 
 for ssy in my_crol:
     data[ssy.text]=ssy.get('href')
 '''
+
+################7/12 테스트 '''
+'''
+import requests
+import json
+from bs4 import BeautifulSoup
+
+req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+html = req.text
+soup = BeautifulSoup(html, 'html.parser')
+soup_ssy = soup.find_all(attrs={'class':'text_center'})
+ans=[]
+
+for tr in soup_ssy:
+    print(tr.text)
+'''    
+'''
+#for i in soup_ssy:
+ #   print(i.text)
+'''
+'''
+#for i in soup_ssy:
+#    json_ssy2 = {
+#        'menu':[i.text]
+#    }
+
+#json_ssy = json.dumps(json_ssy2)
+#print(json_ssy2)
+
+'''
+#########되는데 제이슨부분 실패 
+
+
+
+## 새 방법 파싱 및 제이슨 생성 ㄱㄱ 7/12
+'''
+import requests
+import json
+from bs4 import BeautifulSoup
+
+fp = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+source = fp
+
+soup = BeautifulSoup(source)
+table = soup.find(id="sub_contents")
+trs = table.tbody.find_all('tr')
+print(trs)
+'''
+##############이놈 방식 이상함
+
+##############re re re 7/12
+'''
+import requests
+import json
+from bs4 import BeautifulSoup
+
+req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+html = req.text
+soup = BeautifulSoup(html, 'html.parser')
+soup_ssy = soup.find_all(attrs={'class':'text_center'})
+
+for tr in soup_ssy:
+    tds = tr.find_all('tr')
+    #ssy=tds.string
+    print(tds)
+'''
+######################### 영화하는거 비슷하게 해보기 7/12
+
+import requests
+import json
+from bs4 import BeautifulSoup
+
+req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+html = req.text
+soup = BeautifulSoup(html, 'html.parser')
+for tag in soup.find_all(attrs={'class':'text_center'}):
+    print(tag.text.strip())
+

@@ -12,10 +12,9 @@ from bs4 import BeautifulSoup
 req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
 html = req.text
 soup = BeautifulSoup(html, 'html.parser')
-my_crol = soup.select(
-    'tr > td'
-)
-
+soup_ssy = soup.find_all(attrs={'class':'text_center'})
+for i in soup_ssy:
+    print(i.text)
    
 
 app = Flask(__name__)
@@ -53,7 +52,7 @@ def Message():
     elif content == u"test":
         dataSend = {
             "message": {
-                "text": my_crol
+                "text": soup_ssy
             }
         }    
     elif u"메뉴" in content:
