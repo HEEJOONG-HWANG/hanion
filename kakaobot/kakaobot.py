@@ -15,10 +15,9 @@ soup = BeautifulSoup(html, 'html.parser')
 my_crol = soup.select(
     'tr > td'
 )
-'''
-for ssy in my_crol:
-    print(ssy.text)
-'''
+
+   
+
 app = Flask(__name__)
  
 @app.route('/keyboard')
@@ -54,7 +53,7 @@ def Message():
     elif content == u"test":
         dataSend = {
             "message": {
-                "text": keywords
+                "text": my_crol
             }
         }    
     elif u"메뉴" in content:
