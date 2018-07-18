@@ -58,7 +58,7 @@ def Message():
     elif content == u"test":
         dataSend = {
             "message": {
-                "photo": im
+                "photo": "im"
             }
            
         }
