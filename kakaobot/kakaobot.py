@@ -50,12 +50,10 @@ def Message():
                 "text": "안녕~~ 반가워 ㅎㅎ"
             }
         }
+ 
     elif content == u"test":
-        dataSend = {
-            "type" : "buttons",
-             "buttons" : ["창의공대", "자연과학대"]
-            }
-            
+        Keyboard()
+        
     elif u"메뉴" in content:
         dataSend = {
             "message": {
@@ -63,6 +61,7 @@ def Message():
             }
         }
         #크롤링해서 제공할 예정
+
     elif u"연락처" in content:
         dataSend = {
             "message": {
@@ -70,6 +69,7 @@ def Message():
             }
         }    
         #이하 동문
+
     elif u"저기" in content:
         dataSend = {
             "message": {
