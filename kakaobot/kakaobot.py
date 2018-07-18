@@ -13,9 +13,10 @@ req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500
 html = req.text
 soup = BeautifulSoup(html, 'html.parser')
 soup_ssy = soup.find_all(attrs={'class':'text_center'})
+'''
 for i in soup_ssy:
     print(i.text)
-   
+'''   
 
 app = Flask(__name__)
  
@@ -51,8 +52,8 @@ def Message():
         }
     elif content == u"test":
         dataSend = {
-            "message": {
-                "text": soup_ssy
+            "type" : "buttons",
+             "buttons" : ["창의공대", "자연과학대"]
             }
         }    
     elif u"메뉴" in content:
@@ -75,7 +76,7 @@ def Message():
                 "text": "볼일 끝났으면 썩 꺼져!"
             }
         }
-    else:
+    else: ##예외처리 추가해줘야 할 부분 방식 생각해보기
         dataSend = {
             "message": {
                 "text": content
