@@ -55,7 +55,7 @@ def Message():
             "type" : "buttons",
              "buttons" : ["창의공대", "자연과학대"]
             }
-        }    
+            
     elif u"메뉴" in content:
         dataSend = {
             "message": {
