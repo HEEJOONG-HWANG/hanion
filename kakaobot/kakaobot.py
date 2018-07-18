@@ -58,7 +58,12 @@ def Message():
     elif content == u"test":
         dataSend = {
             "message": {
-                "photo": im
+                "photo": {
+                    "url": im,
+                    "width":535,
+                    "height":512
+                
+                }
             }
            
         }
