@@ -59,10 +59,9 @@ def Message():
         dataSend = {
             "message": {
                 "photo": {
-                    "url": im,
+                    "url": "http://www.kyonggi.ac.kr/web/images/kgu/contents/sub01/17_map_01.gif",
                     "width":535,
                     "height":512
-                
                 }
             }
            
