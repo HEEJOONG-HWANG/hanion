@@ -54,12 +54,9 @@ def Message():
     elif content == u"test":
         dataSend = {
             "message": {
-                "text": "test중"
-            },
-            Keyboard :{
-                 "type" : "buttons",
-              "buttons" : ["대1!", "도2말"]
+                "photo": test1.jpg
             }
+           
         }
 
     elif u"메뉴" in content:
