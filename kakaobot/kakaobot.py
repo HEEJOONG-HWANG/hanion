@@ -66,7 +66,17 @@ def Message():
             }
            
         }
-
+    elif content == u"test2":
+        req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+        html = req.text
+        soup = BeautifulSoup(html, 'html.parser')
+        for tag in soup.find_all(attrs={'class':'text_center'}):
+            dataSend = {
+                "message": {
+                  "text": "%s" %tag.text.strip()
+             }
+           
+        }
     elif u"메뉴" in content:
         dataSend = {
             "message": {
