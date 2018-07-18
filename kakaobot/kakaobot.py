@@ -26,6 +26,13 @@ def Keyboard():
         "type" : "buttons",
         "buttons" : ["대화하기!", "도움말"]
     }
+    dataReceive = request.get_json()
+    content = dataReceive['content']
+    if content == u"ssy":
+        dataSend = {
+        "type" : "buttons",
+        "buttons" : ["대화하기!", "도움말"]
+        }
     return jsonify(dataSend)
  
 @app.route('/message', methods=['POST'])
@@ -52,8 +59,12 @@ def Message():
         }
  
     elif content == u"test":
-        Keyboard()
-        
+        dataSend = {
+            "message": {
+                "text": "test중"
+            }
+        }
+
     elif u"메뉴" in content:
         dataSend = {
             "message": {
