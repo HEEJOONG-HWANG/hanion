@@ -8,6 +8,9 @@ import os
 from flask import Flask, request, jsonify
 import requests
 from bs4 import BeautifulSoup
+from PIL import Image
+
+im= Image.open('test1.jpg')
 
 req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
 html = req.text
@@ -54,7 +57,7 @@ def Message():
     elif content == u"test":
         dataSend = {
             "message": {
-                "photo": test1.jpg
+                "photo": im
             }
            
         }
