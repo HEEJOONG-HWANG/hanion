@@ -10,7 +10,8 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 
-im= Image.open('test1.jpg')
+im = Image.open('test1.jpg')
+im.save('python.jpg')
 
 req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
 html = req.text
