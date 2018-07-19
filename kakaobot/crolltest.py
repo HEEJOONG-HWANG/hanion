@@ -126,7 +126,7 @@ for tr in soup_ssy:
     print(tds)
 '''
 ######################### 영화하는거 비슷하게 해보기 7/12
-
+'''
 import requests
 import json
 from bs4 import BeautifulSoup
@@ -136,4 +136,13 @@ html = req.text
 soup = BeautifulSoup(html, 'html.parser')
 for tag in soup.find_all(attrs={'class':'text_center'}):
     print(tag.text.strip())
+'''
+#########################3
+import os
+from flask import Flask, request, jsonify
+import requests
+from bs4 import BeautifulSoup
+from PIL import Image
 
+im = Image.open('C:/Users/LG gram/Desktop/Hanion/kakaobot/test1.jpg')
+im.show()
