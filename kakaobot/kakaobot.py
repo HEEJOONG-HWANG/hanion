@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from PIL import Image
 
 im = Image.open('test1.jpg')
-im.save('python.jpg')
+#im.save('python.jpg')
 
 req = requests.get("http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
 html = req.text
@@ -59,7 +59,8 @@ def Message():
         dataSend = {
             "message": {
                 "photo": {
-                    "url": "http://www.kyonggi.ac.kr/web/images/kgu/contents/sub01/17_map_01.gif",
+                    #"url": "http://www.kyonggi.ac.kr/web/images/kgu/contents/sub01/17_map_01.gif",
+                    "url": "http://54.180.6.41:5000/test1.jpg",
                     "width":535,
                     "height":512
                 }
