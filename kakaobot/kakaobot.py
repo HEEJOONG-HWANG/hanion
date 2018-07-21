@@ -75,7 +75,7 @@ def Message():
         }
     elif u"캠퍼스맵" in content:
         dataSend = {
-            "message": {
+            "content": {
                 "photo": {
                     "url": "http://www.kyonggi.ac.kr/web/images/kgu/contents/tour_img_new.jpg",
                     #"url": "/home/ubuntu/hanion/kakaobot/test1.jpg",
