@@ -140,7 +140,7 @@ def Message():
     else: ##예외처리 추가해줘야 할 부분 방식 생각해보기
         dataSend = {
             "message": {
-                 "text": content + "라는 키워드는 없습니다. 도움말을 참고해주세요."
+                 "text": "%s 라는 키워드는 없습니다. 도움말을 참고해주세요." %content
             }
         }
     return jsonify(dataSend)
