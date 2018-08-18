@@ -1,7 +1,5 @@
 
----------------------------------
  #kakaobot.py  (상윤 ver)
----------------------------------
 
 import os
 from flask import Flask, request, jsonify
@@ -13,7 +11,7 @@ im = Image.open('test1.jpg')
 # im.save('python.jpg')
 
 req = requests.get(
-    "http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+    "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
 html = req.text
 soup = BeautifulSoup(html, 'html.parser')
 soup_ssy = soup.find_all(attrs={'class': 'text_center'})
@@ -28,13 +26,8 @@ app = Flask(__name__)
 @app.route('/keyboard')
 def Keyboard():
     dataSend = {
-<<<<<<< HEAD
-        "type" : "buttons",
-        "buttons" : ["대화하기!", "도움말", "학사일정"]
-=======
         "type": "buttons",
         "buttons": ["대화하기!", "도움말"]
->>>>>>> 2b762c6f0b3eb3c6d4aaff52779c54d50378a89b
     }
     return jsonify(dataSend)
 
@@ -55,17 +48,7 @@ def Message():
                 "text": "고양이버스, 학생통학버스, 통근버스, 방학통학버스 중 필요하신 키워드를 입력해주세요."
             }
         }
-<<<<<<< HEAD
-    elif content == u"학사일정":
-        dataSend = {
-            "message": {
-                #학사일정 url을 못찾았어요......
-            }
-        }
-    elif u"안녕" in content:
-=======
     elif u"고양이버스" in content:
->>>>>>> 2b762c6f0b3eb3c6d4aaff52779c54d50378a89b
         dataSend = {
             "message": {
                 "text": "https://www.kyonggi.ac.kr/webService.kgu?menuCode=K00M04002302"
@@ -141,38 +124,38 @@ def Message():
         }
 
     elif u"유아교육과" in content:
-        dataSend = {
-            if { u"연락처" in content:
-                dataSend = {
-            "message": {
-                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010110&orgCd=K010212"
-                     }
-                }
-            }
-            elif { u"교육과정" in content:
+        
+        if  u"연락처" in content:
+            dataSend = {
+                "message": {
+                    "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010110&orgCd=K010212"
+                            }
+                        }
+            
+        elif  u"교육과정" in content:
                   dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01011001&orgCd=K010212"
                     }
-                }
-            }
+                
+            
     elif u"국어국문학과" in content:
-        dataSend = {
-            if { u"연락처" in content:
-                dataSend = {
-            "message": {
-                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010101&orgCd=K010201"
-                    }
-                }
-            }
-            elif { u"교육과정" in content:
-                   dataSend = {
+        
+        if  u"연락처" in content:
+            dataSend = {
                 "message": {
+                     "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010101&orgCd=K010201"
+                    }
+                 }
+            
+        elif  u"교육과정" in content:
+                dataSend = {
+                    "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010101&orgCd=K010201"
                     }
                 }
-            }
-        }
+            
+        
     elif u"영어영문학과" in content:
         dataSend = {
             if{ u"연락처" in content:
@@ -541,12 +524,7 @@ def Message():
                 "text": "볼일 끝났으면 썩 꺼져!"
             }
         }
-<<<<<<< HEAD
-    else: ##예외처리 추가해줘야 할 부분 방식 생각해보기
-        #메세지 텍스트로 "오타나 띄어쓰기를 주의해주세요" // "지원하지 않는 메뉴입니다" 이러고 도움말로 넘어가는거 어때요?
-=======
     else:  # 예외처리 추가해줘야 할 부분 방식 생각해보기
->>>>>>> 2b762c6f0b3eb3c6d4aaff52779c54d50378a89b
         dataSend = {
             "message": {
                 "text": content
