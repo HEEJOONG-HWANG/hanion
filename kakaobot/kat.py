@@ -102,7 +102,7 @@ def Message():
     elif content == u"연락처":
         dataSend = {
             "message": {
-                "text": "융합교양대학, 휴먼인재융합대학, 지식정보서비스대학, 융합과학대학, 창의공과대학, 중 필요하신 키워드를 입력해주세요."
+                "text": "본인 학과 + 연락처  입력해주세요  \n ex : 밥한끼할과 연락처"
             }
         }
     elif u"융합교양대학" in content:
@@ -139,6 +139,15 @@ def Message():
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01011001&orgCd=K010212"
                     }
             }
+        else:  # 예외처리 추가해줘야 할 부분 방식 생각해보기
+            dataSend = {
+              "message": {
+                  "text": "연락처 교육과정 test 확인"
+              }
+           }
+
+
+            
 
     elif u"국어국문학과" in content:
         
@@ -451,7 +460,7 @@ def Message():
 
     elif u"메뉴" in content:
         req = requests.get(
-            "http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+            "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
         for tag in soup.find_all(attrs={'class': 'text_center'}):
