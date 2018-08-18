@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 
- #kakaobot.py  (상윤 ver)
+#kakaobot.py  (상윤 ver)
 
 import os
 from flask import Flask, request, jsonify
