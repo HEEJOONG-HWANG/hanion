@@ -150,7 +150,7 @@ for tag in soup.find_all(attrs={'class': 'text_center'}):
 req = requests.get("https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
 html = req.text
 soup = BeautifulSoup(html, 'html.parser')
-soup_ssy = soup.find_all(attrs={'class': 'text_center'})
+soup_ssy = soup.find_all(attrs={'class': 'table_t1'})
 
 for i in soup_ssy:
       print(i.text)
@@ -166,4 +166,20 @@ from PIL import Image
 
 im = Image.open('C:/Users/LG gram/Desktop/Hanion/kakaobot/test1.jpg')
 im.show()
+'''
+
+############################# 크롤링 안되서 뺴둠 0818 ##########
+'''
+    elif u"메뉴" in content:
+        req = requests.get(
+            "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+        html = req.text
+        soup = BeautifulSoup(html, 'html.parser')
+        for tag in soup.find_all(attrs={'class': 'text_center'}):
+            dataSend = {
+                "message": {
+                    "text": "%s" % tag.text.strip()
+                }
+
+            }
 '''

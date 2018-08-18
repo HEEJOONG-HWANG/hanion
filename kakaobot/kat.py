@@ -457,24 +457,11 @@ def Message():
             }
 
         }
-'''
-    elif u"메뉴" in content:
-        req = requests.get(
-            "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
-        html = req.text
-        soup = BeautifulSoup(html, 'html.parser')
-        for tag in soup.find_all(attrs={'class': 'text_center'}):
-            dataSend = {
-                "message": {
-                    "text": "%s" % tag.text.strip()
-                }
 
-            }
-'''
     elif content == u"메뉴":
         dataSend = {
             "message": {
-                "text": "http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon"
+                "text":"http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon"
             }
         }
         # 크롤링해서 제공할 예정

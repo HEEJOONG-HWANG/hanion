@@ -567,7 +567,7 @@ def Message():
             }
 
         }
-
+'''
     elif u"메뉴" in content:
         req = requests.get(
             "http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
@@ -580,7 +580,8 @@ def Message():
                 }
 
             }
-    elif content == u"메뉴링크":
+'''            
+    elif content == u"메뉴":
         dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon"
