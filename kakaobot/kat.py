@@ -133,20 +133,20 @@ def Message():
                         }
             
         elif  u"교육과정" in content:
-                  dataSend = {
+            dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01011001&orgCd=K010212"
                     }
-                
-            
+            }
+
     elif u"국어국문학과" in content:
         
         if  u"연락처" in content:
             dataSend = {
                 "message": {
                      "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010101&orgCd=K010201"
-                    }
-                 }
+                         }
+                        }
             
         elif  u"교육과정" in content:
                 dataSend = {
@@ -157,280 +157,276 @@ def Message():
             
         
     elif u"영어영문학과" in content:
-        dataSend = {
-            if{ u"연락처" in content:
+        
+            if u"연락처" in content:
                 dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010105&orgCd=K010203"
                     }
                 }
-            }
-            elif { u"교육과정" in content:
+            
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010501&orgCd=K010203"
                         }
                     }
-                }
-            }
+                
+            
 
     elif u"중어중문학과" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010104&orgCd=K010208"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010401&orgCd=K010208"
                         }
                     }
-                }
-            }
+                
+            
     elif u"사학과" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010108&orgCd=K010209"
                 }
-            }
-        }
-            elif { u"교육과정" in content:
+              }
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010801&orgCd=K010209"
                         }
                     }
-                }
-            }
+                
 
     elif u"문헌정보학과" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010109&orgCd=K010210"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010901&orgCd=K010210"
                         }
                     }
-                }
-            }
+                
 
     elif u"문예창작학과" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010102&orgCd=K010211"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010201&orgCd=K010211"
                         }
                     }
-                }
-            }
+                
+            
     elif u"독어독문전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010106&orgCd=K010205"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010601&orgCd=K010205"
                         }
                     }
-                }
-            }
+                
+            
     elif u"불어불문전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010107&orgCd=K010206"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010701&orgCd=K010206"
                         }
                     }
-                }
-            }
+                
+            
     elif u"일어일문전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+    
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010103&orgCd=K010207"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010301&orgCd=K010207"
                         }
                     }
-                }
-            }
+                
+            
     elif u"러시아어문전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010111&orgCd=K010214"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01011101&orgCd=K010214"
                         }
                     }
-                }
-            }
+                
+            
     elif u"서양화미술경영학과" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010921&orgCd=K011017"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01092101&orgCd=K011017"
                         }
                     }
-                }
-            }
+                
+            
     elif u"입체조형학과" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010919&orgCd=K011015"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01091901&orgCd=K011015"
                         }
                     }
-                }
-            }
+                
+            
     elif u"한국화서예학과" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010920&orgCd=K011016"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01092001&orgCd=K011016"
                         }
                     }
-                }
-            }
+                
+            
     elif u"산업디자인전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010906&orgCd=K011002"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01090601&orgCd=K011002"
                         }
                     }
-                }
-            }
+                
+            
     elif u"시각정보디자인전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+        
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010905&orgCd=K011001"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01090501&orgCd=K011001"
                         }
                     }
-                }
-            }
+                
+            
     elif u"장신구금속디자인전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010907&orgCd=K011003"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01090701&orgCd=K011003"
                         }
                     }
-                }
-            }
+                
+            
     elif u"스포츠건강과학전공" in content:
-        dataSend = {
-            if { u"연락처" in contnet:
+            if  u"연락처" in content:
                  dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M011001&orgCd=K011102"
                 }
             }
-        }
-            elif { u"교육과정" in content:
+        
+            elif  u"교육과정" in content:
                    dataSend = {
                 "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01100101&orgCd=K011102"
                         }
                     }
-                }
-            }
+                
+            
 
     elif u"박물관" in content:
         dataSend = {
