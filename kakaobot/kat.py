@@ -76,7 +76,7 @@ def Message():
     elif u"학식" in content:
         dataSend = {
             "message": {
-                "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04025700&restGb=suwon"
+              "text": "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04025700&restGb=suwon"
             }
         }
     elif u"캠퍼스맵" in content:
@@ -457,7 +457,7 @@ def Message():
             }
 
         }
-
+'''
     elif u"메뉴" in content:
         req = requests.get(
             "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
@@ -470,7 +470,8 @@ def Message():
                 }
 
             }
-    elif content == u"메뉴링크":
+'''
+    elif content == u"메뉴":
         dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon"
