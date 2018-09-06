@@ -990,7 +990,19 @@ def Message():
                 "text": "http://kutis.kyonggi.ac.kr/webkutis/"
             }
         }
+    elif u"경기UP" in content:
+        dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/KyonggiUp.kgu"
+            }
+        }
 
+    elif u"교직과정" in content:
+        dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/webService.kgu?menuCode=K00M040310"
+            }
+        }
     elif u"꺼져" in content:
         dataSend = {
             "message": {
