@@ -435,7 +435,486 @@ def Message():
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01100101&orgCd=K011102"
                         }
                     }
-                
+
+    elif u"레저스포츠전공" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M011003&orgCd=K011104"
+                }
+            }
+
+            elif  u"교육과정" in content:
+                    dataSend = {
+                "message": {
+                    "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01100301&orgCd=K011104"
+                        }
+                    }
+
+
+    elif u"스포츠산업경영전공" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M011002&orgCd=K011103"
+                }
+            }
+
+            elif  u"교육과정" in content:
+                    dataSend = {
+                "message": {
+                    "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01100201&orgCd=K011103"
+                        }
+                    }
+
+    elif u"시큐리티매니지먼트전공" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M011004&orgCd=K011105"
+                }
+            }
+
+            elif  u"교육과정" in content:
+                    dataSend = {
+                "message": {
+                    "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01100401&orgCd=K011105"
+                        }
+                    }
+
+    elif u"체육학과" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M011000&orgCd=K011101"
+                }
+            }
+            elif  u"교육과정" in content:
+                    dataSend = {
+                "message": {
+                    "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01100001&orgCd=K011101"
+                        }
+                    }
+
+    elif u"법학과" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010311&orgCd=K010507"
+                }
+            }
+            elif  u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01031101&orgCd=K010301"
+                            }
+                        }
+
+    elif u"행정학과" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010300&orgCd=K010501"
+                    }
+                }
+            elif  u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01030001&orgCd=K010501"
+                            }
+                        }
+
+    elif u"경찰행정학과" in content:
+            if  u"연락처" in contnet:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010304&orgCd=K010505"
+                    }
+                }
+            elif  u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01030401&orgCd=K010505"
+                            }
+                        }
+
+    elif u"사회복지전공" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010301&orgCd=K010502"
+                    }
+                }
+            elif  u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01030101&orgCd=K010502"
+                            }
+                        }
+    elif u"청소년전공" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010303&orgCd=K010504"
+                    }
+                }
+            elif  u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01030301&orgCd=K010504"
+                            }
+                        }
+    elif u"국제관계학과" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010312&orgCd=K010508"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01031201&orgCd=K010401"
+                            }
+                        }
+    elif u"국제산업정보학과" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010313&orgCd=K010509"
+                    }
+                }
+            elif  u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01031301&orgCd=K010403"
+                            }
+                        }
+    elif u"경제전공" in content:
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010400&orgCd=K010601"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01040001&orgCd=K010601"
+                            }
+                        }
+    elif u"응용통계전공" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010401&orgCd=K010605"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01040101&orgCd=K010605"
+                            }
+                        }
+    elif u"지식재산학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010402&orgCd=K010608"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01040201&orgCd=K010608"
+                            }
+                        }
+    elif u"경영학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010403&orgCd=K010602"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01040301&orgCd=K010602"
+                            }
+                        }
+    elif u"무역학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010404&orgCd=K010603"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01040401&orgCd=K010603"
+                            }
+                        }
+    elif u"회계세무전공" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010405&orgCd=K010604"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01040501&orgCd=K010604"
+                            }
+                        }
+    elif u"경영정보전공" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010406&orgCd=K010606"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01040601&orgCd=K010606"
+                            }
+                        }
+    elif u"수학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010700&orgCd=K010801"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01070001&orgCd=K010801"
+                            }
+                        }
+    elif u"전자물리학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010701&orgCd=K010802"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01070101&orgCd=K010802"
+                            }
+                        }
+    elif u"화학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010702&orgCd=K010803"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01070201&orgCd=K010803"
+                            }
+                        }
+    elif u"생명과학전공" in content:
+            if u"연락처" in content:
+                ataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010703&orgCd=K010804"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01070301&orgCd=K010804"
+                        }
+                    }
+    elif u"식품생물공학전공" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010704&orgCd=K010805"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01070401&orgCd=K010805"
+                            }
+                        }
+    elif u"컴퓨터공학부" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010705&orgCd=K010806"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01070501&orgCd=K010806"
+                            }
+                        }
+    elif u"융합보안학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010001&orgCd=K010102"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01000101&orgCd=K010102"
+                            }
+                        }
+    elif u"토목공공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010803&orgCd=K010901"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080301&orgCd=K010901"
+                            }
+                        }
+    elif u"건축학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010802&orgCd=K010902"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080201&orgCd=K010902"
+                            }
+                        }
+    elif u"건축공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010801&orgCd=K010903"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080101&orgCd=K010903"
+                            }
+                        }
+    elif u"산업경영공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010807&orgCd=K010904"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080201&orgCd=K010902"
+                            }
+                        }
+    elif u"신소재공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010810&orgCd=K010905"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01081001&orgCd=K010905"
+                            }
+                        }
+    elif u"환경에너지공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010804&orgCd=K010906"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080401&orgCd=K010906"
+                            }
+                        }
+    elif u"전자공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010805&orgCd=K010907"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080501&orgCd=K010907"
+                            }
+                        }
+    elif u"도시교통공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010808&orgCd=K010908"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080801&orgCd=K010908"
+                            }
+                        }
+    elif u"기계시스템공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010806&orgCd=K010909"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080601&orgCd=K010909"
+                            }
+                        }
+    elif u"화학공학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010809&orgCd=K010910"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01080901&orgCd=K010910"
+                            }
+                        }
+    elif u"계약학과" in content:
+            if u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010816&orgCd=K010911"
+                    }
+                }
+            elif u"교육과정" in content:
+                    dataSend = {
+                    "message": {
+                        "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01081601&orgCd=K010911"
+                            }
+                        }
             
 
     elif u"박물관" in content:
@@ -496,11 +975,11 @@ def Message():
     elif u"도서관" in content:
         dataSend = {
             "message": {
-                "text": "1. 공지사항\n http://library.kyonggi.ac.kr/bbs/list/1\n"
-                        "2. 소장 자료검색\n http://library.kyonggi.ac.kr/search/tot\n"
-                        "3. 열람실 좌석현황\n http://libgate.kyonggi.ac.kr/roomstatus/index.asp\n"
-                        "4. 대출\n http://library.kyonggi.ac.kr/myloan/list\n"
-                        "5. 희망도서\n http://library.kyonggi.ac.kr/purchaserequest/write\n"
+                "text": "1. 공지사항\n http://library.kyonggi.ac.kr/bbs/list/1\n\n"
+                        "2. 소장 자료검색\n http://library.kyonggi.ac.kr/search/tot\n\n"
+                        "3. 열람실 좌석현황\n http://libgate.kyonggi.ac.kr/roomstatus/index.asp\n\n"
+                        "4. 대출\n http://library.kyonggi.ac.kr/myloan/list\n\n"
+                        "5. 희망도서\n http://library.kyonggi.ac.kr/purchaserequest/write\n\n"
                         "6. 도서관 시설예약\n http://library.kyonggi.ac.kr/roomreserve/dateList/1"
             }
         }
