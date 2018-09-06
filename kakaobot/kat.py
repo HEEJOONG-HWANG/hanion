@@ -997,10 +997,10 @@ def Message():
             }
         }
 
-    elif u"교직과정" in content:
+    elif u"교육과정" in content:
         dataSend = {
             "message": {
-                "text": "http://www.kyonggi.ac.kr/webService.kgu?menuCode=K00M040310"
+                "text": "http://www.kyonggi.ac.kr/webService.kgu?menuCode=K00M040313"
             }
         }
     elif u"꺼져" in content:
