@@ -29,8 +29,13 @@ app = Flask(__name__)
 @app.route('/keyboard')
 def Keyboard():
     dataSend = {
+<<<<<<< HEAD
         "type": "buttons",
         "buttons": ["대화하기!", "도움말"]
+=======
+        "type" : "buttons",
+        "buttons" : ["대화하기!", "도움말", "학사일정"]
+>>>>>>> 52e06115e35569b17f865068e0d35d200cde4edf
     }
     return jsonify(dataSend)
 
@@ -51,7 +56,17 @@ def Message():
                 "text": "고양이버스, 학생통학버스, 통근버스, 방학통학버스 중 필요하신 키워드를 입력해주세요."
             }
         }
+<<<<<<< HEAD
     elif u"고양이버스" in content:
+=======
+    elif content == u"학사일정":
+        dataSend = {
+            "message": {
+                #학사일정 url을 못찾았어요......
+            }
+        }
+    elif u"안녕" in content:
+>>>>>>> 52e06115e35569b17f865068e0d35d200cde4edf
         dataSend = {
             "message": {
                 "text": "https://www.kyonggi.ac.kr/webService.kgu?menuCode=K00M04002302"
@@ -609,13 +624,51 @@ def Message():
             }
             # 이하 동문
 
+    elif u"인재개발처" or u"인재" or u"인제" in content: #띄어쓰기하거나 오타가 많이 나올것같아서 or연산자로 묶어봤어요
+        dataSend = {
+            "message": {
+                "text": "http://job.kyonggi.ac.kr/"
+            }
+        }
+
+    elif u"도서관" in content:
+        dataSend = {
+            "message": {
+                "text": "1. 공지사항\n http://library.kyonggi.ac.kr/bbs/list/1\n"
+                        "2. 소장 자료검색\n http://library.kyonggi.ac.kr/search/tot\n"
+                        "3. 열람실 좌석현황\n http://libgate.kyonggi.ac.kr/roomstatus/index.asp\n"
+                        "4. 대출\n http://library.kyonggi.ac.kr/myloan/list\n"
+                        "5. 희망도서\n http://library.kyonggi.ac.kr/purchaserequest/write\n"
+                        "6. 도서관 시설예약\n http://library.kyonggi.ac.kr/roomreserve/dateList/1"
+            }
+        }
+
+    elif u"교육과정" in content: #학과가 너무 많아서 if문을 많이 사용해야될것같아서 좀더 고민해볼게요
+        dataSend = {
+            "message": {
+                "text": content
+            }
+        }
+
+    elif u"쿠티스" in content:
+        dataSend = {
+            "message": {
+                "text": "http://kutis.kyonggi.ac.kr/webkutis/index.jsp"
+            }
+        }
+
     elif u"꺼져" in content:
         dataSend = {
             "message": {
                 "text": "볼일 끝났으면 썩 꺼져!"
             }
         }
+<<<<<<< HEAD
     else:  # 예외처리 추가해줘야 할 부분 방식 생각해보기
+=======
+    else: ##예외처리 추가해줘야 할 부분 방식 생각해보기
+        #메세지 텍스트로 "오타나 띄어쓰기를 주의해주세요" // "지원하지 않는 메뉴입니다" 이러고 도움말로 넘어가는거 어때요?
+>>>>>>> 52e06115e35569b17f865068e0d35d200cde4edf
         dataSend = {
             "message": {
                 "text": content
