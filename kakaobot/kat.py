@@ -525,7 +525,7 @@ def Message():
                         }
 
     elif u"경찰행정학과" in content:
-            if  u"연락처" in contnet:
+            if  u"연락처" in content:
                 dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010304&orgCd=K010505"
