@@ -8,19 +8,6 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 
-im = Image.open('test1.jpg')
-# im.save('python.jpg')
-
-req = requests.get(
-    "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
-html = req.text
-soup = BeautifulSoup(html, 'html.parser')
-soup_ssy = soup.find_all(attrs={'class': 'text_center'})
-'''
-for i in soup_ssy:
-    print(i.text)
-'''
-
 app = Flask(__name__)
 
 
@@ -739,7 +726,7 @@ def Message():
                         }
     elif u"생명과학전공" in content:
             if u"연락처" in content:
-                ataSend = {
+                dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010703&orgCd=K010804"
                     }
