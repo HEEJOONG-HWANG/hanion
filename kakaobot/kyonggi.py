@@ -67,7 +67,7 @@ def Message():
             }
         }
 
-    elif u"캠퍼스 맵" in content:
+    elif u"캠퍼스맵" in content:
         dataSend = {
             "message": {
                 "text": "1. 1강의동(진리관)\n http://map.daum.net/?urlX=507523&urlY=1055980&urlLevel=3&itemId=17566989&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A7%84%EB%A6%AC%EA%B4%80&srcid=17566989&map_type=TYPE_MAP\n\n"
