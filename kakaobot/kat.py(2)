@@ -40,7 +40,7 @@ def Message():
     if content == u"대화하기!":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 자유게시판\n6. 도서관\n7. 교육과정 \n8. 쿠티스 링크\n9. 인재개발처\n10. 동아리관련\n11. 박물관\n12. 강의시간표"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 홈페이지 \n6. 도서관 \n7. 교육과정 \n8. 동아리관련 \n9. 박물관 \n10. 강의시간표"
             }
         }
     elif u"스쿨버스" in content:
@@ -1173,10 +1173,17 @@ def Message():
             }
             # 이하 동문
 
-    elif u"인재개발처" in content:
+   elif u"홈페이지" in content:
         dataSend = {
             "message": {
-                "text": "http://job.kyonggi.ac.kr/"
+                "text": "1. 쿠티스\n http://kutis.kyonggi.ac.kr/webkutis/index.jsp\n\n"
+                        "2. LMS\n https://lms.kyonggi.ac.kr/login.php\n\n"
+                        "3. 가상대학 e-Learning\n http://www.kcucon.or.kr/login/login.asp\n\n"
+                        "4. 수강신청\n http://kutis.kyonggi.ac.kr:8080/sugangLink.html\n\n"
+                        "5. 경기업\n http://www.kyonggiup.com/main\n\n"
+                        "6. 인재 개발처\n http://job.kyonggi.ac.kr/index.jsp\n\n"
+                        "7. 교수학습 개발센터\n http://www.kyonggi.ac.kr/KyonggiTpSrv.kgu?cxt=kctl\n\n"
+                        "8. 사이버 안전교육\n http://safety.kyonggi.ac.kr/Account/LogOn?rtnUrl=/"
             }
         }
 
@@ -1192,18 +1199,6 @@ def Message():
             }
         }
 
-    elif u"쿠티스" in content:
-        dataSend = {
-            "message": {
-                "text": "http://kutis.kyonggi.ac.kr/webkutis/"
-            }
-        }
-    elif u"경기UP" in content:
-        dataSend = {
-            "message": {
-                "text": "http://www.kyonggi.ac.kr/KyonggiUp.kgu"
-            }
-        }
 
     elif u"교육과정" in content:
         dataSend = {
