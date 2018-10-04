@@ -8,6 +8,19 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 
+im = Image.open('test1.jpg')
+# im.save('python.jpg')
+
+req = requests.get(
+    "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04038500&restGb=suwon")
+html = req.text
+soup = BeautifulSoup(html, 'html.parser')
+soup_ssy = soup.find_all(attrs={'class': 'text_center'})
+'''
+for i in soup_ssy:
+    print(i.text)
+'''
+
 app = Flask(__name__)
 
 
@@ -26,8 +39,10 @@ def Message():
     content = dataReceive['content']
     if content == u"대화하기!":
         dataSend = {
+
+            
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 홈페이지 \n6. 도서관 \n7. 교육과정 \n8. 동아리관련 \n9. 박물관 \n10. 강의시간표"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표"
             }
         }
     elif u"스쿨버스" in content:
@@ -67,39 +82,190 @@ def Message():
             }
         }
 
-    elif u"캠퍼스맵" in content:
+    elif content == u"캠퍼스맵":
         dataSend = {
             "message": {
-                "text": "1. 1강의동(진리관)\n http://map.daum.net/?urlX=507523&urlY=1055980&urlLevel=3&itemId=17566989&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A7%84%EB%A6%AC%EA%B4%80&srcid=17566989&map_type=TYPE_MAP\n\n"
-                        "2. 2강의동(성신관)\n http://map.daum.net/?urlX=507437&urlY=1055674&urlLevel=3&itemId=26776098&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%84%B1%EC%8B%A0%EA%B4%80&srcid=26776098&map_type=TYPE_MAP\n\n"
-                        "3. 3강의동(애경관)\n http://map.daum.net/?urlX=507588&urlY=1055606&urlLevel=3&itemId=26776099&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%95%A0%EA%B2%BD%EA%B4%80&srcid=26776099&map_type=TYPE_MAP\n\n"
-                        "4. 4강의동(예지관)\n http://map.daum.net/?urlX=508085&urlY=1055975&urlLevel=3&itemId=17564292&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%98%88%EC%A7%80%EA%B4%80&srcid=17564292&map_type=TYPE_MAP\n\n"
-                        "5. 5강의동(덕문관)\n http://map.daum.net/?urlX=508151&urlY=1055766&urlLevel=3&itemId=17566587&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%8D%95%EB%AC%B8%EA%B4%80&srcid=17566587&map_type=TYPE_MAP\n\n"
-                        "6. 6강의동(광교관)\n http://map.daum.net/?urlX=508502&urlY=1056046&urlLevel=3&itemId=17562025&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B4%91%EA%B5%90%EA%B4%80&srcid=17562025&map_type=TYPE_MAP\n\n"
-                        "7. 7강의동(집현관)\n http://map.daum.net/?urlX=508602&urlY=1056142&urlLevel=3&itemId=17565835&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A7%91%ED%98%84%EA%B4%80&srcid=17565835&map_type=TYPE_MAP\n\n"
-                        "8. 8강의동(육영관)\n http://map.daum.net/?urlX=508717&urlY=1056004&urlLevel=3&itemId=17555976&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%9C%A1%EC%98%81%EA%B4%80&srcid=17555976&map_type=TYPE_MAP\n\n"
-                        "9. 9강의동(호연관)\n http://map.daum.net/?urlX=507526&urlY=1056931&urlLevel=3&itemId=11963159&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%98%B8%EC%97%B0%EA%B4%80&srcid=11963159&map_type=TYPE_MAP\n\n"
-                        "10. 예학관\n http://map.daum.net/?urlX=507566&urlY=1056597&urlLevel=3&itemId=26776117&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%98%88%ED%95%99%EA%B4%80&srcid=26776117&map_type=TYPE_MAP\n\n"
-                        "11. 공학실습동 (공대실습동)\n http://map.daum.net/?urlX=508755&urlY=1056126&urlLevel=3&itemId=17567359&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B3%B5%EB%8C%80%EC%8B%A4%EC%8A%B5%EB%8F%99&srcid=17567359&map_type=TYPE_MAP\n\n"
-                        "12. 공과대학(제2공학관)\n http://map.daum.net/?urlX=508866&urlY=1055838&urlLevel=3&itemId=26776119&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A0%9C2%EA%B3%B5%ED%95%99%EA%B4%80&srcid=26776119&map_type=TYPE_MAP\n\n"
-                        "13. 리서치센터\n http://map.daum.net/?urlX=509009&urlY=1056000&urlLevel=3&itemId=17564287&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%A6%AC%EC%84%9C%EC%B9%98%EC%84%BC%ED%84%B0&srcid=17564287&map_type=TYPE_MAP\n\n"
-                        "14. 체육대학 운동장1\n http://map.daum.net/?urlX=507898&urlY=1055751&urlLevel=3&itemId=17580005&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%9A%B4%EB%8F%99%EC%9E%A5&srcid=17580005&map_type=TYPE_MAP\n\n"
-                        "15. 창업보육센터\n http://map.daum.net/?urlX=508489&urlY=1055963&urlLevel=3&itemId=26776116&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%B0%BD%EC%97%85%EB%B3%B4%EC%9C%A1%EC%84%BC%ED%84%B0&srcid=26776116&map_type=TYPE_MAP\n\n"
-                        "16. 중앙도서관\n http://map.daum.net/?urlX=507901&urlY=1056091&urlLevel=3&itemId=8172339&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A4%91%EC%95%99%EB%8F%84%EC%84%9C%EA%B4%80&srcid=8172339&map_type=TYPE_MAP\n\n"
-                        "17. 종합강의동\n http://map.daum.net/?urlX=507901&urlY=1056091&urlLevel=3&itemId=8172339&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A4%91%EC%95%99%EB%8F%84%EC%84%9C%EA%B4%80&srcid=8172339&map_type=TYPE_MAP\n\n"
-                        "18. 중앙세미나실\n http://map.daum.net/?urlX=507805&urlY=1056106&urlLevel=3&itemId=17562006&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A4%91%EC%95%99%EC%84%B8%EB%AF%B8%EB%82%98%EC%8B%A4&srcid=17562006&map_type=TYPE_MAP\n\n"
-                        "19. 텔레컨벤션 센터\n http://map.daum.net/?urlX=507741&urlY=1056416&urlLevel=3&itemId=13571290&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%85%94%EB%A0%88%EC%BB%A8%EB%B2%A4%EC%85%98%EC%84%BC%ED%84%B0&srcid=13571290&map_type=TYPE_MAP\n\n"
-                        "20. 미래관\n http://map.daum.net/?urlX=507416&urlY=1055812&urlLevel=3&itemId=17567353&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%AF%B8%EB%9E%98%EA%B4%80&srcid=17567353&map_type=TYPE_MAP\n\n"
-                        "21. 학생회관\n http://map.daum.net/?urlX=508019&urlY=1056555&urlLevel=3&itemId=23810963&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%95%99%EC%83%9D%ED%9A%8C%EA%B4%80&srcid=23810963&map_type=TYPE_MAP\n\n"
-                        "22. 박물관\n http://map.daum.net/?urlX=507932&urlY=1056496&urlLevel=3&itemId=12665397&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%B0%95%EB%AC%BC%EA%B4%80&srcid=12665397&map_type=TYPE_MAP\n\n"
-                        "23. 교수연구동\n http://map.daum.net/?urlX=508105&urlY=1056308&urlLevel=3&itemId=26776113&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B5%90%EC%88%98%EC%97%B0%EA%B5%AC%EB%8F%99&srcid=26776113&map_type=TYPE_MAP\n\n"
-                        "24. 체육관\n http://map.daum.net/?urlX=507525&urlY=1055550&urlLevel=3&itemId=17567139&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%B2%B4%EC%9C%A1%EA%B4%80&srcid=17567139&map_type=TYPE_MAP\n\n"
-                        "25. 어울림관\n http://map.daum.net/?urlX=507970&urlY=1056774&urlLevel=3&itemId=17562007&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%96%B4%EC%9A%B8%EB%A6%BC%EA%B4%80&srcid=17562007&map_type=TYPE_MAP\n\n"
-                        "26. 한우리관\n http://map.daum.net/?urlX=507390&urlY=1055160&urlLevel=3&itemId=404021031&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%88%98%EC%9B%90%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%ED%95%9C%EC%9A%B0%EB%A6%AC%EA%B4%80&srcid=404021031&map_type=TYPE_MAP\n\n"
-                        "27. 경기드림타워\n http://map.daum.net/?urlX=508555&urlY=1055143&urlLevel=3&itemId=17579635&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B2%BD%EA%B8%B0%EB%93%9C%EB%A6%BC%ED%83%80%EC%9B%8C&srcid=17579635&map_type=TYPE_MAP\n\n"
-                        "28. 홍보관\n http://map.daum.net/?urlX=507480&urlY=1056449&urlLevel=3&itemId=17564269&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%99%8D%EB%B3%B4%EA%B4%80&srcid=17564269&map_type=TYPE_MAP\n\n"
-                        "29. 감성코어\n http://map.daum.net/?urlX=508007&urlY=1056088&urlLevel=3&itemId=24660616&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B0%90%EC%84%B1%EC%BD%94%EC\n\n"
-                        "30. 신한은행\n http://map.daum.net/?urlX=507956&urlY=1056635&urlLevel=3&itemId=9197981&q=%EC%8B%A0%ED%95%9C%EC%9D%80%ED%96%89%20%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%EC%B6%9C%EC%9E%A5%EC%86%8C&srcid=9197981&map_type=TYPE_MAP"
+                "text": "찾고자 하는 건물을 입력해주세요.  \n\n 1. 1강의동(진리관) \n 2. 2강의동(성신관) \n 3. 3강의동(애경관) \n 4. 4강의동(예지관) \n 5. 5강의동(덕문관) \n 6. 6강의동(광교관) \n 7. 7강의동(집현관) \n 8. 8강의동(육영관) \n 9. 9강의동(호연관) \n 10. 예학관 \n 11. 공학실습동 (공대실습동) \n 12. 공과대학(제2공학관)\n 13. 리서치센터\n 14. 체육대학 운동장1\n 15. 창업보육센터\n 16. 중앙도서관\n 17. 종합강의동\n 18. 중앙세미나실\n 19. 텔레컨벤션 센터\n 20. 미래관\n 21. 학생회관\n 22. 박물관\n 23. 교수연구동\n 24. 체육관\n 25. 어울림관\n 26. 한우리관\n 27. 경기드림타워\n 28. 홍보관\n 29. 감성코어\n 30. 신한은행"
+            }
+        }
+    elif u"1강의동(진리관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507523&urlY=1055980&urlLevel=3&itemId=17566989&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A7%84%EB%A6%AC%EA%B4%80&srcid=17566989&map_type=TYPE_MAP"
+            }
+        }
+    elif u"2강의동(성신관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507437&urlY=1055674&urlLevel=3&itemId=26776098&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%84%B1%EC%8B%A0%EA%B4%80&srcid=26776098&map_type=TYPE_MAP"
+            }
+        }
+    elif u"3강의동(애경관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507588&urlY=1055606&urlLevel=3&itemId=26776099&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%95%A0%EA%B2%BD%EA%B4%80&srcid=26776099&map_type=TYPE_MAP"
+            }
+        }
+    elif u"4강의동(예지관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508085&urlY=1055975&urlLevel=3&itemId=17564292&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%98%88%EC%A7%80%EA%B4%80&srcid=17564292&map_type=TYPE_MAP"
+            }
+        }
+    elif u"5강의동(덕문관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508151&urlY=1055766&urlLevel=3&itemId=17566587&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%8D%95%EB%AC%B8%EA%B4%80&srcid=17566587&map_type=TYPE_MAP"
+            }
+        }
+    elif u"6강의동(광교관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508502&urlY=1056046&urlLevel=3&itemId=17562025&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B4%91%EA%B5%90%EA%B4%80&srcid=17562025&map_type=TYPE_MAP"
+            }
+        }
+    elif u"7강의동(집현관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508602&urlY=1056142&urlLevel=3&itemId=17565835&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A7%91%ED%98%84%EA%B4%80&srcid=17565835&map_type=TYPE_MAP"
+            }
+        }
+    elif u"8강의동(육영관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508717&urlY=1056004&urlLevel=3&itemId=17555976&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%9C%A1%EC%98%81%EA%B4%80&srcid=17555976&map_type=TYPE_MAP"
+            }
+        }
+    elif u"9강의동(호연관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507526&urlY=1056931&urlLevel=3&itemId=11963159&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%98%B8%EC%97%B0%EA%B4%80&srcid=11963159&map_type=TYPE_MAP"
+            }
+        }
+    elif u"예학관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507566&urlY=1056597&urlLevel=3&itemId=26776117&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%98%88%ED%95%99%EA%B4%80&srcid=26776117&map_type=TYPE_MAP"
+            }
+        }
+    elif u"공학실습동 (공대실습동)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508755&urlY=1056126&urlLevel=3&itemId=17567359&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B3%B5%EB%8C%80%EC%8B%A4%EC%8A%B5%EB%8F%99&srcid=17567359&map_type=TYPE_MAP"
+            }
+        }
+    elif u"공과대학(제2공학관)" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508866&urlY=1055838&urlLevel=3&itemId=26776119&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A0%9C2%EA%B3%B5%ED%95%99%EA%B4%80&srcid=26776119&map_type=TYPE_MAP"
+            }
+        }
+    elif u"리서치센터" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=509009&urlY=1056000&urlLevel=3&itemId=17564287&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%A6%AC%EC%84%9C%EC%B9%98%EC%84%BC%ED%84%B0&srcid=17564287&map_type=TYPE_MAP"
+            }
+        }
+    elif u"체육대학 운동장1" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507898&urlY=1055751&urlLevel=3&itemId=17580005&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%9A%B4%EB%8F%99%EC%9E%A5&srcid=17580005&map_type=TYPE_MAP"
+            }
+        }
+    elif u"창업보육센터" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508489&urlY=1055963&urlLevel=3&itemId=26776116&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%B0%BD%EC%97%85%EB%B3%B4%EC%9C%A1%EC%84%BC%ED%84%B0&srcid=26776116&map_type=TYPE_MAP"
+            }
+        }
+    elif u"중앙도서관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507901&urlY=1056091&urlLevel=3&itemId=8172339&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A4%91%EC%95%99%EB%8F%84%EC%84%9C%EA%B4%80&srcid=8172339&map_type=TYPE_MAP"
+            }
+        }
+    elif u"종합강의동" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507901&urlY=1056091&urlLevel=3&itemId=8172339&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A4%91%EC%95%99%EB%8F%84%EC%84%9C%EA%B4%80&srcid=8172339&map_type=TYPE_MAP"
+            }
+        }
+    elif u"중앙세미나실" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507805&urlY=1056106&urlLevel=3&itemId=17562006&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%A4%91%EC%95%99%EC%84%B8%EB%AF%B8%EB%82%98%EC%8B%A4&srcid=17562006&map_type=TYPE_MAP"
+            }
+        }
+    elif u"텔레컨벤션 센터" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507741&urlY=1056416&urlLevel=3&itemId=13571290&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%85%94%EB%A0%88%EC%BB%A8%EB%B2%A4%EC%85%98%EC%84%BC%ED%84%B0&srcid=13571290&map_type=TYPE_MAP"
+            }
+        }
+    elif u"미래관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507416&urlY=1055812&urlLevel=3&itemId=17567353&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%AF%B8%EB%9E%98%EA%B4%80&srcid=17567353&map_type=TYPE_MAP"
+            }
+        }
+    elif u"학생회관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508019&urlY=1056555&urlLevel=3&itemId=23810963&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%95%99%EC%83%9D%ED%9A%8C%EA%B4%80&srcid=23810963&map_type=TYPE_MAP"
+            }
+        }
+    elif u"박물관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507932&urlY=1056496&urlLevel=3&itemId=12665397&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%B0%95%EB%AC%BC%EA%B4%80&srcid=12665397&map_type=TYPE_MAP"
+            }
+        }
+    elif u"교수연구동" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508105&urlY=1056308&urlLevel=3&itemId=26776113&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B5%90%EC%88%98%EC%97%B0%EA%B5%AC%EB%8F%99&srcid=26776113&map_type=TYPE_MAP"
+            }
+        }
+    elif u"체육관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507525&urlY=1055550&urlLevel=3&itemId=17567139&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%B2%B4%EC%9C%A1%EA%B4%80&srcid=17567139&map_type=TYPE_MAP"
+            }
+        }
+    elif u"어울림관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507970&urlY=1056774&urlLevel=3&itemId=17562007&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%96%B4%EC%9A%B8%EB%A6%BC%EA%B4%80&srcid=17562007&map_type=TYPE_MAP"
+            }
+        }
+    elif u"한우리관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507390&urlY=1055160&urlLevel=3&itemId=404021031&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EC%88%98%EC%9B%90%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%ED%95%9C%EC%9A%B0%EB%A6%AC%EA%B4%80&srcid=404021031&map_type=TYPE_MAP"
+            }
+        }
+    elif u"경기드림타워" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508555&urlY=1055143&urlLevel=3&itemId=17579635&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B2%BD%EA%B8%B0%EB%93%9C%EB%A6%BC%ED%83%80%EC%9B%8C&srcid=17579635&map_type=TYPE_MAP"
+            }
+        }
+    elif u"홍보관" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507480&urlY=1056449&urlLevel=3&itemId=17564269&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%99%8D%EB%B3%B4%EA%B4%80&srcid=17564269&map_type=TYPE_MAP"
+            }
+        }
+    elif u"감성코어" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=508007&urlY=1056088&urlLevel=3&itemId=24660616&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EA%B0%90%EC%84%B1%EC%BD%94%EC"
+            }
+        }
+    elif u"신한은행" in content:
+        dataSend = {
+            "message": {
+                "text": "http://map.daum.net/?urlX=507956&urlY=1056635&urlLevel=3&itemId=9197981&q=%EC%8B%A0%ED%95%9C%EC%9D%80%ED%96%89%20%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%EC%B6%9C%EC%9E%A5%EC%86%8C&srcid=9197981&map_type=TYPE_MAP"
             }
         }
 
@@ -107,6 +273,12 @@ def Message():
         dataSend = {
             "message": {
                 "text": "본인 학과 + 연락처  입력해주세요  \n ex : 밥한끼할과 연락처"
+            }
+        }
+    elif content == u"교육과정":
+        dataSend = {
+            "message": {
+                "text": "본인 학과 + 교육과정  입력해주세요  \n ex : 밥한끼할과 교육과정"
             }
         }
     elif u"융합교양대학" in content:
@@ -150,8 +322,6 @@ def Message():
               }
            }
 
-
-            
 
     elif u"국어국문학과" in content:
         
@@ -726,7 +896,7 @@ def Message():
                         }
     elif u"생명과학전공" in content:
             if u"연락처" in content:
-                dataSend = {
+                ataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010703&orgCd=K010804"
                     }
@@ -954,8 +1124,22 @@ def Message():
                 "text": "http://www.kyonggi.ac.kr/kguTel.kgu?mzcode=K00M00020400"
             }
         }
+        # 크롤링해서 제공할 예정
+    elif u"연락처" in content:
+        req = requests.get(
+            "http://www.kyonggi.ac.kr/kguTel.kgu?mzcode=K00M00020400")
+        html = req.text
+        soup = BeautifulSoup(html, 'html.parser')
+        for tag in soup.find_all(attrs={'class': 'table_t4'}):
+            dataSend = {
+                "message": {
+                    "text": "%s" % tag.text.strip()
+                }
 
-    elif u"홈페이지" in content:
+            }
+            # 이하 동문
+
+   elif u"홈페이지" in content:
         dataSend = {
             "message": {
                 "text": "1. 쿠티스\n http://kutis.kyonggi.ac.kr/webkutis/index.jsp\n\n"
@@ -981,13 +1165,6 @@ def Message():
             }
         }
 
-
-    elif u"교육과정" in content:
-        dataSend = {
-            "message": {
-                "text": "http://www.kyonggi.ac.kr/webService.kgu?menuCode=K00M040313"
-            }
-        }
     elif u"꺼져" in content:
         dataSend = {
             "message": {
