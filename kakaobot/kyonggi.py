@@ -325,14 +325,14 @@ def Message():
 
     elif u"국어국문학과" in content:
         
-        if  u"연락처" in content:
-            dataSend = {
-                "message": {
-                     "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010101&orgCd=K010201"
-                         }
-                        }
+            if  u"연락처" in content:
+                dataSend = {
+            "message": {
+                "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010101&orgCd=K010201"
+                    }
+                }
             
-        elif  u"교육과정" in content:
+            elif  u"교육과정" in content:
                 dataSend = {
                     "message": {
                     "text": "http://www.kyonggi.ac.kr/curriculumSrv.kgu?mzcode=K00M01010101&orgCd=K010201"
@@ -896,7 +896,7 @@ def Message():
                         }
     elif u"생명과학전공" in content:
             if u"연락처" in content:
-                ataSend = {
+                dataSend = {
             "message": {
                 "text": "http://www.kyonggi.ac.kr/kguSbjInfo.kgu?mzcode=K00M010703&orgCd=K010804"
                     }
