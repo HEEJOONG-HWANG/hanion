@@ -81,6 +81,102 @@ def Message():
                 "text": "고양이버스, 학생통학버스, 통근버스, 방학통학버스 중 필요하신 키워드를 입력해주세요."
             }
         }
+    elif content == u"1":
+        dataSend = {
+            "message": {
+                "text": "고양이버스, 학생통학버스, 통근버스, 방학통학버스 중 필요하신 키워드를 입력해주세요."
+            }
+        }    
+    elif content == u"2":
+        dataSend = {
+            "message": {
+                "text": "https://www.kyonggi.ac.kr/webRestMenu.kgu?mzcode=K00M04025700&restGb=suwon"
+            }
+        }      
+    elif content == u"3":
+        dataSend = {
+            "message": {
+                "text": "찾고자 하는 건물을 입력해주세요.  \n\n 1. 1강의동(진리관) \n 2. 2강의동(성신관) \n 3. 3강의동(애경관) \n 4. 4강의동(예지관) \n 5. 5강의동(덕문관) \n 6. 6강의동(광교관) \n 7. 7강의동(집현관) \n 8. 8강의동(육영관) \n 9. 9강의동(호연관) \n 10. 예학관 \n 11. 공학실습동 (공대실습동) \n 12. 공과대학(제2공학관)\n 13. 리서치센터\n 14. 체육대학 운동장1\n 15. 창업보육센터\n 16. 중앙도서관\n 17. 종합강의동\n 18. 중앙세미나실\n 19. 텔레컨벤션 센터\n 20. 미래관\n 21. 학생회관\n 22. 박물관\n 23. 교수연구동\n 24. 체육관\n 25. 어울림관\n 26. 한우리관\n 27. 경기드림타워\n 28. 홍보관\n 29. 감성코어\n 30. 신한은행"
+            }
+        }   
+    elif content == u"4":
+        dataSend = {
+            "message": {
+                "text": "본인 학과 + 연락처  입력해주세요  \n ex : 00과 연락처"
+            }
+        }     
+    elif content == u"5":
+        dataSend = {
+            "message": {
+                "text": "본인 학과 + 교육과정  입력해주세요  \n ex : 00과 교육과정"
+            }
+        }     
+    elif content == u"6":
+        dataSend = {
+            "message": {
+                "text": "1. 쿠티스\n http://kutis.kyonggi.ac.kr/webkutis/index.jsp\n\n"
+                        "2. LMS\n https://lms.kyonggi.ac.kr/login.php\n\n"
+                        "3. 가상대학 e-Learning\n http://www.kcucon.or.kr/login/login.asp\n\n"
+                        "4. 수강신청\n http://kutis.kyonggi.ac.kr:8080/sugangLink.html\n\n"
+                        "5. 경기업\n http://www.kyonggiup.com/main\n\n"
+                        "6. 인재 개발처\n http://job.kyonggi.ac.kr/index.jsp\n\n"
+                        "7. 교수학습 개발센터\n http://www.kyonggi.ac.kr/KyonggiTpSrv.kgu?cxt=kctl\n\n"
+                        "8. 사이버 안전교육\n http://safety.kyonggi.ac.kr/Account/LogOn?rtnUrl=/"
+            }
+        }     
+    elif content == u"7":
+        dataSend = {
+            "message": {
+                "text": "1. 공지사항\n http://library.kyonggi.ac.kr/bbs/list/1\n\n"
+                        "2. 소장 자료검색\n http://library.kyonggi.ac.kr/search/tot\n\n"
+                        "3. 열람실 좌석현황\n http://libgate.kyonggi.ac.kr/roomstatus/index.asp\n\n"
+                        "4. 대출\n http://library.kyonggi.ac.kr/myloan/list\n\n"
+                        "5. 희망도서\n http://library.kyonggi.ac.kr/purchaserequest/write\n\n"
+                        "6. 도서관 시설예약\n http://library.kyonggi.ac.kr/roomreserve/dateList/1"
+            }
+        }       
+    elif content == u"8":
+        dataSend = {
+            "message": {
+                "text": "http://museum.kyonggi.ac.kr/index.html"
+            }
+        }      
+    elif content == u"박물관":
+        dataSend = {
+            "message": {
+                "text": "http://museum.kyonggi.ac.kr/index.html"
+            }
+        }     
+    elif content == u"9":
+        dataSend = {
+            "message": {
+                "text": "개발중입니다.. 꿀팁 아이디어좀 부탁드립니다."
+            }
+        }         
+    elif u"동아리" in content:
+        dataSend = {
+            "message": {
+              "text": "개발중입니다.. 꿀팁 아이디어좀 부탁드립니다."
+            }
+        }    
+    elif u"강의시간표" in content:
+        dataSend = {
+            "message": {
+              "text": "개발중입니다.. 꿀팁 아이디어좀 부탁드립니다."
+            }
+        }        
+    elif content == u"10":
+        dataSend = {
+            "message": {
+                "text": "개발중입니다.. 꿀팁 아이디어좀 부탁드립니다."
+            }
+        }       
+    elif content == u"11":
+        dataSend = {
+            "message": {
+                "text": "https://open.kakao.com/o/gJ07VT1"
+            }
+        }       
     elif u"고양이버스" in content:
         dataSend = {
             "message": {
@@ -115,7 +211,7 @@ def Message():
     elif content == u"캠퍼스맵":
         dataSend = {
             "message": {
-                "text": "찾고자 하는 건물을 입력해주세요.  \n\n 1. 1강의동(진리관) \n 2. 2강의동(성신관) \n 3. 3강의동(애경관) \n 4. 4강의동(예지관) \n 5. 5강의동(덕문관) \n 6. 6강의동(광교관) \n 7. 7강의동(집현관) \n 8. 8강의동(육영관) \n 9. 9강의동(호연관) \n 10. 예학관 \n 11. 공학실습동 (공대실습동) \n 12. 공과대학(제2공학관)\n 13. 리서치센터\n 14. 체육대학 운동장1\n 15. 창업보육센터\n 16. 중앙도서관\n 17. 종합강의동\n 18. 중앙세미나실\n 19. 텔레컨벤션 센터\n 20. 미래관\n 21. 학생회관\n 22. 박물관\n 23. 교수연구동\n 24. 체육관\n 25. 어울림관\n 26. 한우리관\n 27. 경기드림타워\n 28. 홍보관\n 29. 감성코어\n 30. 신한은행"
+                "text": "찾고자 하는 건물을 입력해주세요.  \n\n 1. 1강의동(진리관) \n 2. 2강의동(성신관) \n 3. 3강의동(애경관) \n 4. 4강의동(예지관) \n 5. 5강의동(덕문관) \n 6. 6강의동(광교관) \n 7. 7강의동(집현관) \n 8. 8강의동(육영관) \n 9. 9강의동(호연관) \n 10. 예학관 \n 11. 공학실습동 (공대실습동) \n 12. 공과대학(제2공학관)\n 13. 리서치센터\n 14. 체육대학 운동장1\n 15. 창업보육센터\n 16. 중앙도서관\n 17. 종합강의동\n 18. 중앙세미나실\n 19. 텔레컨벤션 센터\n 20. 미래관\n 21. 학생회관\n 22. 박물관2(지도URL을 원하시면 2를 적어주세요)\n 23. 교수연구동\n 24. 체육관\n 25. 어울림관\n 26. 한우리관\n 27. 경기드림타워\n 28. 홍보관\n 29. 감성코어\n 30. 신한은행"
             }
         }
     elif u"1강의동(진리관)" in content:
@@ -328,7 +424,7 @@ def Message():
                 "text": "http://map.daum.net/?urlX=508019&urlY=1056555&urlLevel=3&itemId=23810963&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%ED%95%99%EC%83%9D%ED%9A%8C%EA%B4%80&srcid=23810963&map_type=TYPE_MAP"
             }
         }
-    elif u"박물관" in content:
+    elif u"박물관2" in content:
         dataSend = {
             "message": {
                 "text": "http://map.daum.net/?urlX=507932&urlY=1056496&urlLevel=3&itemId=12665397&q=%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%95%99%EA%B5%90%20%EB%B0%95%EB%AC%BC%EA%B4%80&srcid=12665397&map_type=TYPE_MAP"
