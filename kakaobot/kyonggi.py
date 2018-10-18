@@ -1124,22 +1124,8 @@ def Message():
                 "text": "http://www.kyonggi.ac.kr/kguTel.kgu?mzcode=K00M00020400"
             }
         }
-        # 크롤링해서 제공할 예정
-    elif u"연락처" in content:
-        req = requests.get(
-            "http://www.kyonggi.ac.kr/kguTel.kgu?mzcode=K00M00020400")
-        html = req.text
-        soup = BeautifulSoup(html, 'html.parser')
-        for tag in soup.find_all(attrs={'class': 'table_t4'}):
-            dataSend = {
-                "message": {
-                    "text": "%s" % tag.text.strip()
-                }
 
-            }
-            # 이하 동문
-
-   elif u"홈페이지" in content:
+    elif u"홈페이지" in content:
         dataSend = {
             "message": {
                 "text": "1. 쿠티스\n http://kutis.kyonggi.ac.kr/webkutis/index.jsp\n\n"
