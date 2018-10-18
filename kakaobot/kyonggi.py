@@ -42,27 +42,39 @@ def Message():
 
             
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
             }
         }
     elif content == u"도움말":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
             }
         }    
     elif content == u"help":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
             }
         }       
     elif content == u"명령어":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
             }
         }       
+    elif u"문의" in content:
+        dataSend = {
+            "message": {
+                "text": "https://open.kakao.com/o/gJ07VT1"
+            }
+        }    
+    elif u"피드백" in content:
+        dataSend = {
+            "message": {
+                "text": "https://open.kakao.com/o/gJ07VT1"
+            }
+        }     
     elif u"스쿨버스" in content:
         dataSend = {
             "message": {
