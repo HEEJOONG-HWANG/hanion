@@ -42,25 +42,25 @@ def Message():
 
             
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의\n12. 와이파이 "
             }
         }
     elif content == u"도움말":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의\n12. 와이파이"
             }
         }    
     elif content == u"help":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의\n12. 와이파이"
             }
         }       
     elif content == u"명령어":
         dataSend = {
             "message": {
-                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의"
+                "text": "명령어 목록!\n1. 스쿨버스 \n2. 학식 \n3. 캠퍼스맵 \n4. 연락처 \n5. 교육과정 \n6. 홈페이지 \n7. 도서관 \n8. 박물관 \n9. 동아리관련 \n10. 강의시간표\n11. 문의\n12. 와이파이"
             }
         }       
     elif u"문의" in content:
@@ -177,6 +177,18 @@ def Message():
                 "text": "https://open.kakao.com/o/gJ07VT1"
             }
         }       
+    elif content == u"12":
+        dataSend = {
+            "message": {
+                "text": "WIFI \nID : kgu_s \nPW : kgu@jump3"
+            }
+        }      
+    elif u"와이파이" in content:
+        dataSend = {
+            "message": {
+                "text": "WIFI \nID : kgu_s \nPW : kgu@jump3"
+            }
+        }          
     elif u"고양이버스" in content:
         dataSend = {
             "message": {
